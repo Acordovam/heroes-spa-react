@@ -7,8 +7,9 @@ export const LoginPage = () => {
     const {login}: any = useContext(AuthContext);
     const  navigate = useNavigate();
     const onLogin = () => {
+        const lastPath = localStorage.getItem('lastPath') || '/'
         login('Alejandro Cordova');
-        navigate('/', {replace: true})
+        navigate(lastPath, {replace: true})
     }
     return (
         <div className="container mt-5">
