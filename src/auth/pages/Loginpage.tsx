@@ -1,9 +1,13 @@
-import React from 'react';
+import React, {useContext} from 'react';
 import {useNavigate} from "react-router-dom";
+import {AuthContext} from "../context";
+
 
 export const LoginPage = () => {
+    const {login}: any = useContext(AuthContext);
     const  navigate = useNavigate();
     const onLogin = () => {
+        login('Alejandro Cordova');
         navigate('/', {replace: true})
     }
     return (
